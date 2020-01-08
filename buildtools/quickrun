@@ -1,0 +1,8 @@
+#!/bin/bash -x
+
+cd $HOME/RetroCRT && 
+git pull &&
+git branch &&
+eval "$(dos2unix < "/boot/retrocrt/retrocrt.txt")" &&
+source ~/.virtualenv/retrocrt/bin/activate &&
+ansible-playbook RetroCRT.yml -i localhost,
